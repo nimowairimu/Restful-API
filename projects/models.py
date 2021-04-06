@@ -10,8 +10,8 @@ class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     datecreated= models.DateField(auto_now_add=True )
 
-#     def __str__(self):
-#         return self.user.username
+    def __str__(self):
+        return self.user.username
  
 #     def save_profile(self):
 #         self.user
