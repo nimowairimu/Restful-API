@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ProjectsConfig',
     'bootstrap4',
     'cloudinary',
 ]
@@ -81,7 +80,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'awwards',
-        'USER': 'nimo,
+        'USER': 'nimo',
     'PASSWORD':'kadesho62',
     }
 }
