@@ -11,6 +11,13 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from pathlib import Path
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'za)mso-9!^@8^2kq)zv7qt#4a+!$he5a@_=ibk&%vv9e)2we93'
+SECRET_KEY = 'ug^a=zqxm*e^oh4*&nu%_^tq&gsi$w4(4q4(4#3j39293zp!qd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,15 +38,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap4',
+    'projects.apps.ProjectsConfig',
+    'projects',
     'cloudinary',
+    'star_ratings',
+    'rest_framework',
+    'bootstrap4', 
 ]
 
 MIDDLEWARE = [
@@ -78,10 +88,10 @@ WSGI_APPLICATION = 'awwards.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'awwards',
+        'ENGINE':'django.db.backends.postgresql',
+        'NAME':'awwards',
         'USER': 'nimo',
-    'PASSWORD':'kadesho62',
+        'PASSWORD':'kadesho62',
     }
 }
 
@@ -110,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Africa/Nairobi'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
