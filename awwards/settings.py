@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r5!cm549_#c9lu)f)7p()*#8^3=^^b5l@2caxv_9un@6#$xk38'
+SECRET_KEY = 'django-insecure-qczjg_#-h9^19g@bmwos6rko7&ax#6052_ws3fttc2tqsx32z&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'projects',
+    'cloudinary',
+    'star_ratings',
+    'rest_framework',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -75,12 +84,11 @@ WSGI_APPLICATION = 'awwards.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'awwards',
-        'USER': 'nimo',
-    'PASSWORD':'kadesho62',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
