@@ -133,3 +133,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+cloudinary.config( 
+  cloud_name = "dbdaabcxr", 
+  api_key = "388228873379869", 
+  api_secret = "7jQEu12De26r0srjbzqrxUJMeMw" 
+)
